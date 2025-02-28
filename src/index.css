@@ -1,0 +1,544 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  transition: all 0.2s;
+}
+
+.nav-button:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.nav-button.active {
+  background-color: #16a34a;
+  color: white;
+}
+
+/* Quotes page styles */
+.quotes-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.quote-container {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease-in;
+  width: 100%;
+}
+
+.add-quote-section {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.add-quote-section h3 {
+  color: #16a34a;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.add-quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.add-quote-form textarea.note-input {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  line-height: 1.5;
+  box-sizing: border-box;
+  direction: ltr !important;
+  unicode-bidi: plaintext;
+  text-align: left !important;
+  writing-mode: horizontal-tb !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Keep author input left-to-right */
+.add-quote-form input.note-input {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  line-height: 1.5;
+  box-sizing: border-box;
+  direction: ltr !important;
+  unicode-bidi: plaintext;
+  text-align: left !important;
+  writing-mode: horizontal-tb !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  height: 42px;
+  min-height: unset;
+}
+
+.add-quote-form .submit-button {
+  align-self: flex-end;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.quote-author {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.new-quote-button {
+  background-color: #16a34a;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.new-quote-button:hover {
+  background-color: #15803d;
+}
+
+/* About page styles */
+.about-page {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.about-page h2 {
+  color: #16a34a;
+  margin-bottom: 1rem;
+}
+
+.about-page p {
+  margin-bottom: 1rem;
+}
+
+.about-page ul {
+  margin: 1rem 0 1rem 1.5rem;
+}
+
+.about-page li {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+/* Note taking styles */
+h1 {
+  color: #16a34a;
+  margin: 0;
+}
+
+.note-form {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Input styles with fixed text behavior */
+.note-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+  transition: border-color 0.2s ease-in-out;
+  background-color: white;
+  outline: none;
+  direction: ltr !important;
+  unicode-bidi: bidi-override;
+  text-align: left !important;
+  writing-mode: horizontal-tb !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+.note-input:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.1);
+  outline: none;
+}
+
+.add-quote-form textarea.note-input,
+.add-quote-form input.note-input {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  line-height: 1.5;
+  box-sizing: border-box;
+  direction: ltr !important;
+  unicode-bidi: bidi-override;
+  text-align: left !important;
+  writing-mode: horizontal-tb !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+.add-quote-form textarea.note-input {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.add-quote-form input.note-input {
+  height: 42px;
+  min-height: unset;
+}
+
+/* Remove any Tailwind interference */
+.add-quote-form input,
+.add-quote-form textarea {
+  font-family: inherit !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  direction: ltr !important;
+  unicode-bidi: bidi-override;
+  text-align: left !important;
+  writing-mode: horizontal-tb !important;
+  -webkit-writing-mode: horizontal-tb !important;
+  -ms-writing-mode: horizontal-tb !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Ensure proper focus behavior */
+.add-quote-form input:focus,
+.add-quote-form textarea:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.1);
+  outline: none;
+  z-index: 1;
+  position: relative;
+}
+
+/* Reset any inherited styles that might cause issues */
+.add-quote-form {
+  display: block;
+  width: 100%;
+  direction: ltr !important;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+  direction: ltr !important;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+  font-weight: 500;
+  font-size: 0.875rem;
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.submit-button {
+  background-color: #16a34a;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #15803d;
+}
+
+.cancel-button {
+  background-color: #6b7280;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-button:hover {
+  background-color: #4b5563;
+}
+
+.notes-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.note-item {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.note-text {
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+.note-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.note-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.note-date,
+.note-edited {
+  font-size: 0.75rem;
+}
+
+.note-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-button {
+  background-color: #0ea5e9;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.edit-button:hover {
+  background-color: #0284c7;
+}
+
+.delete-button {
+  background-color: #ef4444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+  background-color: #dc2626;
+}
+
+/* Loading spinner styles */
+.loading-spinner {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #f3f4f6;
+  border-radius: 50%;
+  border-top-color: #16a34a;
+  animation: spin 1s ease-in-out infinite;
+  margin: 2rem 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.quotes-list {
+  margin-top: 2rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 2rem auto 0;
+  width: 100%;
+}
+
+.quotes-list h3 {
+  color: #16a34a;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.quote-item {
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+
+.quote-item:hover {
+  border-color: #16a34a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.quote-date {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.quote-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.quote-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.quote-edited {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.quote-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.quote-item {
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+  background-color: white;
+}
+
+.quote-item:hover {
+  border-color: #16a34a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.quote-item .quote-text {
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.quote-item .quote-author {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.no-quotes {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+  padding: 2rem 0;
+}
