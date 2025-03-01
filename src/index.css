@@ -115,7 +115,7 @@ body {
 }
 
 /* Keep author input left-to-right */
-.add-quote-form input.note-input {
+/* .add-quote-form input.note-input {
   display: block;
   width: 100%;
   margin: 0;
@@ -131,7 +131,7 @@ body {
   appearance: none !important;
   height: 42px;
   min-height: unset;
-}
+} */
 
 .add-quote-form .submit-button {
   align-self: flex-end;

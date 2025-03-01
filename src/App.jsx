@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
-
+import SignIn from './SignIn'; // Import the SignIn component
+import SignUp from './SignUp'; // Import the SignUp component
 function App() {
   const [note, setNote] = useState("");
   const [notes, setNotes] = useState([]);
@@ -12,6 +13,7 @@ function App() {
   const [editingQuoteId, setEditingQuoteId] = useState(null);
 
   // Default quotes with IDs and isDefault flag
+  
   const defaultQuotes = [
     {
       id: "default-1",
@@ -224,18 +226,22 @@ This platform is not just for taking notes; it exists to help you hear your inne
 
       </p>
       <ul>
-        <li>Create and store notes</li>
-        <li>Delete unwanted notes</li>
-        <li>Edit existing notes</li>
-        <li>Automatic saving to local storage</li>
-        <li>Timestamps for creation and edits</li>
-        <li>Real-time inspirational quotes</li>
+        <li>🧠 Gain Self-Awareness</li>
+           
+        <li>🔄 Repeat, Hear, Notice - When you write down your thoughts, you can see them from an external perspective, helping you better understand your mind</li>
+        <li>📖 Talk to Your Past to who you are – Write until you hear what you're saying. Discover the loops in your mind and realize what your inner voice is truly saying.</li>
+        <li>✅ Revisit your past thoughts anytime – Randomly revisit a note you wrote in the past. What does it tell you about your feelings back then and how they relate to who you are today?</li>
+        <li>🎯Timestamps for creation and edits</li>
+        <li>📌Real-time inspirational quotes</li>
+        
       </ul>
-      <p>
-        Built with React and modern web technologies, PsycheBloom provides a
-        clean and intuitive interface for all your note-taking needs.
-      </p>
-    </div>
+      <br/>
+      <br/>
+      <h3>For Contacting us </h3>
+      <p>Whatsapp number: +994516236608 </p>
+      <p>Instagram:psychebloom</p>
+      <p>Mail:psychebloom@gmail.com</p>
+         </div>
   );
 
   // Quotes page component - for displaying random quotes
@@ -350,8 +356,8 @@ This platform is not just for taking notes; it exists to help you hear your inne
                 type="text"
                 value={newQuoteAuthor}
                 onChange={(e) => setNewQuoteAuthor(e.target.value)}
-                onFocus={() => console.log("Author input focused")}
-                onBlur={() => console.log("Author input blurred")}
+                // onFocus={() => console.log("Author input focused")}
+                // onBlur={() => console.log("Author input blurred")}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     e.preventDefault();
@@ -435,6 +441,7 @@ This platform is not just for taking notes; it exists to help you hear your inne
 
   return (
     <div className="app">
+      {/* <SignIn/> */}
       <nav className="navbar">
         <h1>PsycheBloom</h1>
         <div className="nav-links">
